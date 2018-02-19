@@ -1,7 +1,7 @@
 #!/bin/bash
 
-kops create cluster --name zeta.com \                                          
-  --state=s3://terraform-remote-state-zeta-dev\
+kops create cluster --name=zeta.com \
+  --state=s3://terraform-remote-state-zeta-dev \
   --zones=us-west-2a,us-west-2b,us-west-2c \
   --master-zones=us-west-2a,us-west-2b,us-west-2c \
   --networking=calico \
@@ -15,4 +15,5 @@ kops create cluster --name zeta.com \
   --topology=public \
   --network-cidr=10.10.0.0/16 \
   --associate-public-ip=false \
-  --authorization=RBAC --yes
+  --authorization=RBAC  \
+  --yes
